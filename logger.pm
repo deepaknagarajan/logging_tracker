@@ -15,7 +15,14 @@ sub s_logger
     print "pass file to option\n";
     exit;
   }
-  print "file $file\n";
+  if (-e $file)
+  {
+    print "file $file\n";
+  }
+  else
+  {
+    print "$file does not exist\n"; 
+  }
 }
 
 unless (caller())

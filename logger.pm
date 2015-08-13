@@ -22,7 +22,14 @@ sub s_logger
   else
   {
     print "$file does not exist\n"; 
+    exit;
   }
+  open(my $fh, '<', $file) or die "$file - $!";
+  while (<$fh>)
+  {
+    print "$_\n";  
+  }
+  close($fh);
 }
 
 unless (caller())

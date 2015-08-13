@@ -24,6 +24,7 @@ sub s_logger
     print "$file does not exist\n"; 
     exit;
   }
+  my $re_pattern = qr//;
   open(my $fh, '<', $file) or die "$file - $!";
   while (<$fh>)
   {

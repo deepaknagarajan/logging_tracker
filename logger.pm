@@ -12,7 +12,7 @@ sub s_logger
   my ($file) = @_;
   unless (defined $file)
   {
-    print "pass file to option\n";
+    warn "pass file to option\n";
     exit;
   }
   if (-e $file)
@@ -21,7 +21,7 @@ sub s_logger
   }
   else
   {
-    print "$file does not exist\n"; 
+    warn "$file does not exist\n"; 
     exit;
   }
   my $re_pattern = qr//;
